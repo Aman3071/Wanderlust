@@ -1,0 +1,111 @@
+<style>
+  .search-btn {
+    background-color: #fe424d; /* Custom background color */
+    color: #fff; /* White text color */
+    border: none; /* Removes border */
+    padding: 0 1rem 0 1rem; /* Adjusted padding for a more balanced look */
+    border-radius: 25px; /* Rounded corners with a larger radius for a softer look */
+    font-size: 12px; /* Sets font size */
+    font-weight: bold; /* Makes the text bold */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: all 0.3s ease; /* Smooth transition effect for hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+  }
+
+  /* Hover effect */
+  .search-btn:hover {
+    background-color: #d93a42; /* Slightly darker background on hover */
+    transform: translateY(-2px); /* Moves the button slightly upward on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+  }
+
+  /* Focus effect */
+  .search-btn:focus {
+    outline: none; /* Removes default outline */
+    box-shadow: 0 0 8px rgba(254, 66, 77, 0.5); /* Adds a glow effect when focused */
+  }
+
+  .search-btn i {
+    border-radius: 25px;
+    display: inline;
+    margin-right: 0.5rem;
+  }
+
+  #search-inp {
+    background-color: #fff; /* White background for the input */
+    color: lightgray; /* Dark text color for better readability */
+    border: 2px solid;  /* Adds a red border matching the button */
+    border-radius: 25px; /* Rounded corners */
+    padding: 0.5rem 5rem 0.5rem 5rem; /* Padding for a comfortable text input area */
+    font-size: 0.8rem; /* Font size matching the button */
+    width: 100%; /* Makes the input take up full width of its container */
+    transition: all 0.3s ease; /* Smooth transition for focus and hover */
+  }
+
+</style>
+
+
+
+<nav class="navbar navbar-expand-md border-bottom sticky-top">
+  <div class="container-fluid">
+
+    <!-- Brand Icon -->
+    <div class="navbar-brand">
+      <a href="/listings"><i class="fa-regular fa-compass"></i></a>
+    </div>
+
+    <!-- Toggler Button -->
+    <div class="navbar-toggler-container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <!-- Left-Side Navigation -->
+      <div class="navbar-nav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/listings">Explore</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Search Form -->
+      <div class="navbar-nav ms-auto">
+        <div class="navbar-search">
+          <form class="d-flex" role="search">
+            <input class="form-control me-2 " id="search-inp" type="search" placeholder="Search destinations">
+            <button class=" search-btn" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>Search</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Right-Side Navigation -->
+      <div class="navbar-nav ms-auto">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/listings/new">Airbnb your home</a>
+          </li>
+          <% if (typeof currUser !== 'undefined' && currUser) { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout"><b>Log out</b></a>
+            </li>
+          <% } else { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login"><b>Log in</b></a>
+            </li>
+          <% } %>
+        </ul>
+      </div>
+      
+    </div>
+
+  </div>
+</nav>
